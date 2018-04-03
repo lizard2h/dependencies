@@ -8,7 +8,7 @@ echo "end install git"
 echo "\n"
 
 echo "metasploit depencies!"
-sudo apt-get install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev vncviewer libyaml-dev curl zlib1g-dev
+sudo apt-get install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev lipcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev vncviewer libyaml-dev curl zlib1g-dev -y
 echo "end metasploit dependencies !"
 
 echo "\n"
@@ -26,14 +26,11 @@ echo "\n"
 
 echo "installing rvm !! "
 
-curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
-curl -L https://get.rvm.io | bash -s stable
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 source ~/.rvm/scripts/rvm
 echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
 source ~/.bashrc
-RUBYVERSION=$(wget https://raw.githubusercontent.com/rapid7/metasploit-framework/master/.ruby-version -q -O - )
-rvm install $RUBYVERSION
-rvm use $RUBYVERSION --default
 ruby -v
 
 echo "ruby install finish, if you dont see ruby version above, something with rvm went wrong"
@@ -55,8 +52,8 @@ echo "\n"
 
 echo "installing WIFI tools"
 
-sudo apt install build-essential autoconf automake libtool pkg-config libnl-3-dev libssl-dev libpcre3-dev ethtool shtool smbclient ghostscript zip 
-sudo apt-get install aircrack-ng ; sudo apt-get update
+sudo apt install build-essential autoconf automake libtool pkg-config libnl-3-dev libssl-dev libpcre3-dev ethtool shtool smbclient ghostscript zip -y
+sudo apt-get install aircrack-ng ; sudo apt-get update -y 
 
 echo "finish WIFI tools"
 
