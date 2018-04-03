@@ -16,6 +16,7 @@ echo "\n"
 echo "install nmap from git"
 mkdir -p /home/$USER/Documents/tools/nmap
 cd  /home/$USER/Documents/tools/nmap
+git clone https://github.com/nmap/nmap
 ./configure
 make
 sudo make install
