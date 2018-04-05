@@ -8,7 +8,14 @@ echo "end install git"
 echo "\n"
 
 echo "metasploit depencies!"
-sudo apt-get install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev lipcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev vncviewer libyaml-dev curl zlib1g-dev -y
+sudo apt-get -y install \
+  build-essential zlib1g zlib1g-dev \
+  libxml2 libxml2-dev libxslt-dev locate \
+  libreadline6-dev libcurl4-openssl-dev git-core \
+  libssl-dev libyaml-dev openssl autoconf libtool \
+  ncurses-dev bison curl wget postgresql \
+  postgresql-contrib libpq-dev libapr1 libaprutil1 \
+  libsvn1 libpcap-dev libsqlite3-dev libgmp-dev
 echo "end metasploit dependencies !"
 
 echo "\n"
